@@ -7,7 +7,11 @@ public class DefaultCountingOutRhymer {
     public static final int MAX_INDEX = 11;
     private final int[] NUMBERS = new int[CAPACITY];
 
-    public int total = EMPTY_RHYMER_INDICATOR;
+    private int total = EMPTY_RHYMER_INDICATOR;
+
+    public int getTotal() {
+        return total;
+    }
 
     public void countIn(final int in) {
         if (!isFull())
@@ -32,6 +36,10 @@ public class DefaultCountingOutRhymer {
         if (callCheck())
             return EMPTY_RHYMER_INDICATOR;
         return NUMBERS[total--];
+    }
+
+    public int[] getNUMBERS() {
+        return NUMBERS;
     }
 
 }
